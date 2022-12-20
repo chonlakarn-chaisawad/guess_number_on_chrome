@@ -3,7 +3,7 @@ import 'dart:io';
 import 'game.dart';
 
 void main() {
-  var game = Game();
+  var game = Game(maxRandom:10000);
   GuessResult? guessResult;
 
   print('╔═════════════════════════════════════════════════════════════');
