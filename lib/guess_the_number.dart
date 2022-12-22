@@ -3,7 +3,7 @@ import 'dart:io';
 import 'game.dart';
 
 void main() {
-  var game = Game(maxRandom:10000);
+  var game = Game(maxRandom: 10);
   GuessResult? guessResult;
 
   print('╔═════════════════════════════════════════════════════════════');
@@ -11,11 +11,10 @@ void main() {
   print('╟─────────────────────────────────────────────────────────────');
 
   do {
-    stdout.write('║ Guess the number between 1 and 100 : ');
+    stdout.write('║ Guess the number between 1 and 10 : ');
     var input = stdin.readLineSync();
 
     if (input == null) {
-      //print('║ Σ (O_O) . . . Error , input is NULL ');
       return;
     }
 
@@ -32,7 +31,8 @@ void main() {
 
     if (guessResult == GuessResult.correct) {
       print('║ (*^◇^)/ﾟ・:*・* [[BINGO!!! $guess is CORRECT ]] *・*:・ﾟ＼(^◇^*)');
-      print('║     (*^◇^)/ﾟ・:* [[You guessed ${game.totalGuesses} times]] *:・ﾟ＼(^◇^*)    ');
+      print(
+          '║     (*^◇^)/ﾟ・:* [[You guessed ${game.totalGuesses} times]] *:・ﾟ＼(^◇^*)    ');
       print('╚═════════════════════════════════════════════════════════════');
     } else if (guessResult == GuessResult.tooLow) {
       print('║ (ಠ_ಠ) $guess is TOO LOW! ▼ ');
@@ -42,4 +42,25 @@ void main() {
       print('╟─────────────────────────────────────────────────────────────');
     }
   } while (guessResult != GuessResult.correct);
+
+  var ans;
+  do {
+    stdout.write('Play Again? (Y/N) : ');
+    ans = stdin.readLineSync();
+
+    if (ans == "Y" || ans == "y") {
+      Game.memberScore.add(game.totalGuesses);
+      main();
+      break;
+    } else if (ans == "N" || ans == "n") {
+      Game.memberScore.add(game.totalGuesses);
+      print("");
+      print("");
+      print("You've played ${Game.memberScore.length} games");
+      for (var i = 0; i < Game.memberScore.length; i++) {
+        print("🚀 Game #${i + 1} : ${Game.memberScore[i]}");
+      }
+      break;
+    }
+  } while (ans != null);
 }
