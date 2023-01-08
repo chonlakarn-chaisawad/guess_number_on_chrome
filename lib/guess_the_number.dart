@@ -30,7 +30,7 @@ void main() {
     guessResult = game.doGuess(guess);
 
     if (guessResult == GuessResult.correct) {
-      print('║ (*^◇^)/ﾟ・:*・* [[BINGO!! $guess is CORRECT ]] *・*:・ﾟ＼(^◇^*)');
+      print('║ (*^◇^)/ﾟ・:*・* [[BINGO!!! $guess is CORRECT ]] *・*:・ﾟ＼(^◇^*)');
       print(
           '║     (*^◇^)/ﾟ・:* [[You guessed ${game.totalGuesses} times]] *:・ﾟ＼(^◇^*)    ');
       print('╚═════════════════════════════════════════════════════════════');
