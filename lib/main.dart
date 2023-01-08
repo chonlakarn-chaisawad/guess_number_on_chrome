@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:hello_flutter/page/game/game_page.dart';
 
 void main() {
   runApp(const MyApp());
 }
-
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -25,9 +24,8 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.pink,
-        
       ),
-      home: const MyHomePage(title: 'Chonlakarn Chaisawad'),
+      home: const GamePage(),
     );
   }
 }
@@ -103,8 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               'Value is $_counter',
-              style: TextStyle(fontSize : 80 , color : Colors.deepPurple),
-              //style: Theme.of(context).textTheme.headline4,
+              style: TextStyle(fontSize: 80,color: Colors.black),
             ),
           ],
         ),

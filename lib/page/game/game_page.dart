@@ -22,7 +22,7 @@ class _GamePageState extends State<GamePage> {
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center, // ให้อยู่ตรงกลาง
                 children: [
-              Icon(Icons.person, size: 200, color: Colors.purpleAccent),
+              Icon(Icons.person, size: 200, color: Colors.pink),
               Text('Guess the number between 1 and 100'),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center, // ให้อยู่ตรงกลาง
